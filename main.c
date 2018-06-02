@@ -22,7 +22,7 @@ int main(void) {
 
     // Find out OpenGL core profile version with `glxinfo | grep -i opengl`
     SDL_GL_SetAttribute(SDL_GL_CONTEXT_MAJOR_VERSION, 4);
-    SDL_GL_SetAttribute(SDL_GL_CONTEXT_MINOR_VERSION, 5);
+    SDL_GL_SetAttribute(SDL_GL_CONTEXT_MINOR_VERSION, 0);
     SDL_GL_SetAttribute(SDL_GL_CONTEXT_PROFILE_MASK, SDL_GL_CONTEXT_PROFILE_CORE);
     SDL_Window* window = SDL_CreateWindow("Hello Wayland",
         SDL_WINDOWPOS_UNDEFINED, SDL_WINDOWPOS_UNDEFINED,
@@ -119,7 +119,7 @@ void sdl_cleanup(SDL_Window* window, SDL_GLContext context) {
 /// Most code is from <https://learnopengl.com>
 void gl_draw_hello_world_triangle() {
     // Shader source
-    const GLchar* vertex_shader_source = "#version 450 core\n"
+    const GLchar* vertex_shader_source = "#version 400 core\n"
         "layout (location = 0) in vec3 aPos;\n"
         "layout (location = 1) in vec3 aColor;\n"
         "out vec3 ourColor;\n"
